@@ -1,0 +1,20 @@
+IPGMS Web Portal - Full Arabic Labels Final
+
+تم تعريب أسماء حقول الإدخال والجداول في واجهات الويب.
+
+ما تم:
+1) استبدال FIELD_LABELS بقاموس عربي شامل.
+2) أي حقل غير معروف لن يظهر خاماً بالإنكليزي، بل يظهر بصيغة:
+   حقل + اسم الحقل
+3) شمل التعريب:
+   المشاريع الرئيسية، التعاقدات، التنفيذ، المراقبة، العوامل الحرجة،
+   الرقابة المالية والنزاهة، المختبرات، المخاطر، الصيانة، الوثائق، GIS، التقارير.
+
+فحص الكود:
+OK
+
+عدد الحقول غير المعرفة صراحة:
+65
+
+الحقول المتبقية إن وجدت:
+['action', 'ai_recommendation', 'appendix_cost', 'appendix_date', 'appendix_description', 'appendix_duration', 'appendix_no', 'appendix_type', 'authorized_entity', 'category', 'committee_notes', 'company_grade', 'company_type', 'contract_amount', 'decision_date', 'decisions', 'delay_damages', 'delay_prediction', 'details', 'document_date', 'document_no', 'due_date', 'engineers', 'execution_status', 'extension_justification', 'extensions', 'final_cost', 'implementation_status', 'issue', 'lab_sample_no', 'laborers', 'lri', 'maintenance_contract_type', 'meeting_place', 'module', 'mtbf', 'mttr', 'name', 'original_duration', 'penalties_index', 'photo_path', 'problem', 'qri', 'record_id', 'required_actions', 'required_decision', 'resident_engineer_department', 'resident_notes', 'resource_availability', 'responsible_entity', 'risk_status', 'root_cause', 'sample_date', 'seq', 'shortage_notes', 'site_observations', 'solution', 'sort_order', 'technicians', 'test_date', 'value', 'variation_orders', 'vii', 'visiting_entity', 'warranty_claims']

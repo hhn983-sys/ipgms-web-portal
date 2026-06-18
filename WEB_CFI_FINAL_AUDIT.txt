@@ -1,0 +1,10 @@
+IPGMS Web Portal Thesis CFI Final
+
+تم إضافة صفحة خاصة:
+- تقييم العوامل الحرجة CFI.
+- زر إدراج العوامل الـ18 للمشروع.
+- تعديل score والوزن والحالة والملاحظات.
+- احتساب CFI وربطه مع monitoring.factors_total.
+- تصنيف CFI.
+
+فحص الكود: OK

@@ -1,0 +1,31 @@
+IPGMS Web Portal - FORCE RIGHT SIDEBAR FINAL
+
+سبب هذا الإصلاح:
+كانت القائمة تظهر يساراً بسبب تعارضات CSS/HTML قديمة. تم ترك Grid/Flex نهائياً واعتماد تثبيت إجباري للقائمة في اليمين.
+
+ما تم:
+1) Dashboard:
+   - القائمة الرئيسية مثبتة فعلياً على يمين الشاشة:
+     position: fixed; right:0; left:auto
+   - المحتوى يترك مساحة يميناً:
+     margin-right:280px
+
+2) الواجهات الفرعية:
+   - إخفاء Sidebar بالكامل.
+   - زر 🏠 الرئيسية فقط في الأعلى.
+   - الجداول تستغل عرض الشاشة بالكامل.
+
+3) الهيدر:
+   - شعار جامعة بغداد.
+   - شعار كلية الهندسة.
+   - اسم النظام عربي/إنكليزي.
+   - الباحث والمشرف.
+
+فحص القوالب والـ CSS:
+{'single_content_block': True, 'body_dashboard_class': True, 'fixed_right_css': True, 'dashboard_margin_right': True, 'subpage_hide_sidebar': True, 'logos': True}
+
+فحص الكود:
+OK
+
+فحص قاعدة البيانات:
+{'projects_master': 10, 'contracts': 10, 'execution_projects': 10, 'monitoring': 10, 'oversight': 10, 'critical_factors': 180}

@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>📋 تقييم العوامل الحرجة 18 - CFI</h2>
+
+<form method="get" class="filters">
+  <label>اختر المشروع</label>
+  <select name="project_id" onchange="this.form.submit()">
+    {% for p in projects %}
+    <option value="{{ p.project_id }}" {% if selected_project_id == p.project_id|string %}selected{% endif %}>{{ p.project_no }} | {{ p.project_name }}</option>
+    {% endfor %}
+  </select>
+  <a class="btn muted" href="{{ url_for('dashboard') }}">🏠 الرئيسية</a>
+</form>
+
+<div class="cards">
+  <div class="card"><b>مؤشر العوامل الحرجة CFI</b><span>{{ cfi }}%</span></div>
+  <div class="card"><b>التصنيف</b><span>{{ cfi_status }}</span></div>
+  <div class="card"><b>عدد العوامل</b><span>{{ rows|length }}</span></div>
+</div>
+
+<form method="post">
+  <input type="hidden" name="project_id" value="{{ selected_project_id }}">
+  <div class="actions">
+    <button name="action" value="generate">➕ إدراج العوامل الـ18 للمشروع</button>
+    <button name="action" value="save">💾 حفظ التقييمات</button>
+  </div>
+
+  <div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>رقم العامل</th>
+        <th>العامل الحرج</th>
+        <th>التقييم 1-5</th>
+        <th>الوزن</th>
+        <th>النتيجة</th>
+        <th>الحالة</th>
+        <th>ملاحظات</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for r in rows %}
+      <tr>
+        <td>{{ r.factor_no }}<input type="hidden" name="id" value="{{ r.id }}"></td>
+        <td>{{ r.factor_name }}</td>
+        <td><input name="score_{{ r.id }}" value="{{ r.score or 3 }}"></td>
+        <td><input name="weight_{{ r.id }}" value="{{ r.weight or 1 }}"></td>
+        <td>{{ r.result or ((r.score or 0) * (r.weight or 1)) }}</td>
+        <td>
+          <select name="status_{{ r.id }}">
+            {% for s in ['منخفض','متوسط','عالٍ','حرج'] %}
+            <option value="{{ s }}" {% if r.status==s %}selected{% endif %}>{{ s }}</option>
+            {% endfor %}
+          </select>
+        </td>
+        <td><input name="notes_{{ r.id }}" value="{{ r.notes or '' }}"></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  </div>
+</form>
+{% endblock %}
